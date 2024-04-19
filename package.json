@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antonstihl/html-slides.git"
+    "url": "git+https://github.com/antonstihl/hatepres.git"
   },
   "author": "Anton Stihl",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/antonstihl/html-slides/issues"
+    "url": "https://github.com/antonstihl/hatepres/issues"
   },
-  "homepage": "https://github.com/antonstihl/html-slides#readme"
+  "homepage": "https://github.com/antonstihl/hatepres#readme"
 }
