@@ -47,7 +47,7 @@ Let's add something very useful for the audience: **focus**.
 </section>
 ```
 
-You can now use the Right/Left arrow keys (or N/B or L/J) to steer the audience's focus through your focusables. Less noise, more focus on your message.
+You can now use the Right/Left arrow keys (or N/B or L/H) to steer the audience's focus through your focusables. Less noise, more focus on your message.
 
 Pretty sweet, yes? No more clickapalooza in the sidebar hell that is PowerPoint/Google Slides/Keynote, just to accomplish rudimentary animations.
 

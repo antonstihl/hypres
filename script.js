@@ -19,7 +19,7 @@ addEventListener("keydown", (e) => {
   } else if (e.key === "ArrowRight" || e.key === "l") {
     e.preventDefault();
     focusNext();
-  } else if (e.key === "ArrowLeft" || e.key === "j") {
+  } else if (e.key === "ArrowLeft" || e.key === "h") {
     e.preventDefault();
     focusPrevious();
   } else if (e.key === "n") {
