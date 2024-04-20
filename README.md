@@ -34,7 +34,7 @@ Try navigating the sections by Up/Down arrow keys (or N/B or J/K). For most case
 
 Let's add something very useful for the audience: **focus**.
 
-2. For each element you want to be a separate focusable, add a `hs-f` attribute. The f means "focusable" and this will accomplish three things:
+2. For each element you want to be a separate focusable, add a `hp-f` attribute. The f means "focusable" and this will accomplish three things:
    - Initially hide the element
    - Reveal + highlight the element on focus
    - Un-highlight when focus moves on
@@ -42,8 +42,8 @@ Let's add something very useful for the audience: **focus**.
 ```html
 <section>
   <h1>My presentation</h1>
-  <p hs-f>It's beautiful, is it not?</p>
-  <p hs-f>And how about this one?</p>
+  <p hp-f>It's beautiful, is it not?</p>
+  <p hp-f>And how about this one?</p>
 </section>
 ```
 

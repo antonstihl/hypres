@@ -53,58 +53,58 @@
   </section>
   <section>
     <h2>A presentation library</h2>
-    <p hs-f>hatepres provides simple tooling to render semantic-enough HTML as a delightful visual aid for your
+    <p hp-f>hatepres provides simple tooling to render semantic-enough HTML as a delightful visual aid for your
       presentation.
     </p>
-    <h3 hs-f>Why?</h3>
-    <p hs-f>If you <em>can</em> code a presentation, <em>why wouldn't you</em>?</p>
+    <h3 hp-f>Why?</h3>
+    <p hp-f>If you <em>can</em> code a presentation, <em>why wouldn't you</em>?</p>
   </section>
   <section>
     <h2>How to</h2>
     <ol>
-      <li hs-f>Create an .html file with your HTML content, divided into one <code>&lt;section/&gt;</code> per "slide".
+      <li hp-f>Create an .html file with your HTML content, divided into one <code>&lt;section/&gt;</code> per "slide".
       </li>
-      <li hs-f>Add the head style tag <code
+      <li hp-f>Add the head style tag <code
           style="display: block;">&lt;link rel="stylesheet" href="https://unpkg.com/hatepres@latest/styles.css" /&gt;</code>
       </li>
-      <li hs-f>Add the head script tag <code
+      <li hp-f>Add the head script tag <code
           style="display: block;">&lt;script src="https://unpkg.com/hatepres@latest/script.js"&gt;&lt;/script&gt;</code>
       </li>
-      <li hs-f>Add attribute <code>hs-f</code> (f for focusable) to make elements focusable. This will hide
+      <li hp-f>Add attribute <code>hp-f</code> (f for focusable) to make elements focusable. This will hide
         them and reveal on focus.
-        <ul hs-f=".banana">
-          <li>Bonus: Add a CSS selector as the <code>hs-f</code> value if you want to...</li>
+        <ul hp-f=".banana">
+          <li>Bonus: Add a CSS selector as the <code>hp-f</code> value if you want to...</li>
         </ul>
       </li>
-      <li hs-f>Done! ✔️</li>
+      <li hp-f>Done! ✔️</li>
     </ol>
-    <div hs-fa class="banana" style="position: absolute; bottom: 0; font-size: 12px;">
+    <div hp-fa class="banana" style="position: absolute; bottom: 0; font-size: 12px;">
       <p>
         ... make it an anchor that also focuses other elements. These anchored elements need to
       </p>
       <ul>
-        <li>have the attribute <code>hs-fa</code> ("focusable anchored")</li>
-        <li>match the CSS selector given in the anchor's <code>hs-f</code> value, e.g. by having a particular class.
+        <li>have the attribute <code>hp-fa</code> ("focusable anchored")</li>
+        <li>match the CSS selector given in the anchor's <code>hp-f</code> value, e.g. by having a particular class.
         </li>
       </ul>
     </div>
   </section>
   <section>
     <h2>Bonus</h2>
-    <p hs-f>Tap into the classes/attributes used by hatepres to <br><span hs-f class="p sassy">style your
+    <p hp-f>Tap into the classes/attributes used by hatepres to <br><span hp-f class="p sassy">style your
         elements</span> as your presentation progresses.</p>
-    <h3 hs-f>In your HTML</h3>
-    <ul hs-f>
+    <h3 hp-f>In your HTML</h3>
+    <ul hp-f>
       <li>
-        <code>[hs-f]</code>
+        <code>[hp-f]</code>
       </li>
       <li>
-        <code>[hs-fa]</code> (anchored focus, not focusable on its own)
+        <code>[hp-fa]</code> (anchored focus, not focusable on its own)
       </li>
-      <li><code>.p</code> (perennial, used to escape [hs-f]'s default hiding)</li>
+      <li><code>.p</code> (perennial, used to escape [hp-f]'s default hiding)</li>
     </ul>
-    <h3 hs-f>In your CSS/JS</h3>
-    <ul hs-f>
+    <h3 hp-f>In your CSS/JS</h3>
+    <ul hp-f>
       <li><code>section.current</code></li>
       <li><code>.current-focus</code></li>
       <li><code>.focus-trace</code></li>
@@ -112,15 +112,15 @@
   </section>
   <section>
     <h2>Philosophy</h2>
-    <p hs-f>Some of the key characteristics of hatepres come from David JP Phillips TEDx talk, <a
+    <p hp-f>Some of the key characteristics of hatepres come from David JP Phillips TEDx talk, <a
         href="https://youtu.be/Iwpi1Lm6dFo?si=ZWBpE1KRV_Ys9pdU">How to avoid death by PowerPoint.</a></p>
     <ol>
       <ul>
-        <li hs-f>One message per slide</li>
-        <li hs-f>Use contrast and size to direct attention</li>
-        <li hs-f>Don't write sentences</li>
-        <li hs-f>Dark bakground</li>
-        <li hs-f>Maximum of 6 items per slide</li>
+        <li hp-f>One message per slide</li>
+        <li hp-f>Use contrast and size to direct attention</li>
+        <li hp-f>Don't write sentences</li>
+        <li hp-f>Dark bakground</li>
+        <li hp-f>Maximum of 6 items per slide</li>
       </ul>
     </ol>
   </section>

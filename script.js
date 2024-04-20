@@ -98,12 +98,12 @@ function focusPrevious() {
 
 function focus(e) {
   e?.classList.add("current-focus", "focus-trace");
-  const anchoredSelector = e.attributes["hs-f"].value;
+  const anchoredSelector = e.attributes["hp-f"].value;
   if (!anchoredSelector) {
     return [];
   }
   getCurrentSection()
-    .querySelectorAll(`:is([hs-fa]):is(${anchoredSelector})`)
+    .querySelectorAll(`:is([hp-fa]):is(${anchoredSelector})`)
     .forEach((groupElement) =>
       groupElement.classList.add("current-focus", "focus-trace")
     );
@@ -141,12 +141,12 @@ function getCurrentFocus() {
 }
 
 function getNextFocusable() {
-  return getCurrentSection().querySelector("[hs-f]:not(.focus-trace)");
+  return getCurrentSection().querySelector("[hp-f]:not(.focus-trace)");
 }
 
 function getPreviousFocusable() {
   const previousFocusTrace = getCurrentSection().querySelectorAll(
-    "[hs-f].focus-trace:not(.current-focus)"
+    "[hp-f].focus-trace:not(.current-focus)"
   );
   return previousFocusTrace.length === 0
     ? undefined

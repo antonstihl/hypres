@@ -50,7 +50,7 @@ section::after {
   background-color: var(--secondaryColor);
 }
 
-section:has([hs-f]:not(.focus-trace))::after {
+section:has([hp-f]:not(.focus-trace))::after {
   background-color: transparent;
 }
 
@@ -71,7 +71,7 @@ section.current {
   animation: fade-in 500ms ease-in-out 0ms 1 normal forwards;
 }
 
-:where(:is([hs-f], [hs-fa]):not(.p)) {
+:where(:is([hp-f], [hp-fa]):not(.p)) {
   visibility: hidden;
 }
 
