@@ -2,61 +2,102 @@
 
 _hypermedia as the engine of presentation_
 
-This library aims to **make it easier for HTML-capable authors to craft a slide deck** as visual aid for a spoken presentation. The whole industry is moving toward everything-as-code and I think presentation visual aids should too.
+Use HTML to build an amazing slideshow. The whole software industry is moving toward everything-as-code - so should presentation tooling!
 
-In addition to the opinionated core functionality and design, the full power of HTML, JS and CSS is at the author's fingertips.
+In addition to the opinionated core functionality (script) and stylesheet, the full power of HTML, JS and CSS is at the author's fingertips.
 
-Have a look at (and inspect) this page to see hatepres in action: https://antonstihl.github.io/hatepres
+Here is a demo presentation with a hatepres presentation in action: https://antonstihl.github.io/hatepres
 
 ## Getting started
-
-### Step 0
-
-First of all, create an HTML file for your presentation `📄 foo-bar.html`, in whatever way you like.
 
 ### Installation
 
 Add the below script and stylesheet to the HTML `<head>`.
 
 ```html
-<script src="https://unpkg.com/hatepres/script.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/hatepres/styles.css" />
+<head>
+  ...
+  <script src="https://unpkg.com/hatepres@latest/script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/hatepres@latest/styles.css" />
+</head>
 ```
 
-Alternatively, if you fancy managing packages, instead use `npm install hatepres` and reference the files in node_modules.
+If you fancy managing packages there is also `npm install hatepres`, with which you instead reference the node_modules files.
 
-### Author your content
+### Core utilities
 
-1. In the HTML body, add at least two sections, with some child elements.
-   - One `<section></section>` is one slide and will take up the full viewport.
+The basic building blocks - the bread and butter - of hatepres are:
 
-Try navigating the sections by Up/Down arrow keys (or N/B or J/K). For most cases _this is quite enough_. Your presentation should now look decent, partly depending on your browser default styles and what content you put in 🙂
+1. `<section>` element
 
-Let's add something very useful for the audience: **focus**.
+One section corresponds to one slide.
 
-2. For each element you want to be a separate focusable, add a `hp-f` attribute. The f means "focusable" and this will accomplish three things:
-   - Initially hide the element
-   - Reveal + highlight the element on focus
-   - Un-highlight when focus moves on
+2. `hp-f` attribute
+
+The `hp-f` attribute denotes a `f`ocusable element. By default, focusable elements are revealed one by one, to direct the audience's attention.
+
+With hatepres, the `section` element and the `hp-f` are all you need to build a very pretty presentation.
+
+### Example slideshow
 
 ```html
+<head>
+  ...
+  <script src="https://unpkg.com/hatepres/script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/hatepres/styles.css" />
+</head>
 <section>
-  <h1>My presentation</h1>
-  <p hp-f>It's beautiful, is it not?</p>
-  <p hp-f>And how about this one?</p>
+  <h1>My presentation about stuff</h1>
+  <p hp-f>Why are we here?</p>
+  <p hp-f>How do I make you listen?</p>
+</section>
+<section>
+  <p>Let's get to it...</p>
+</section>
+<section>
+  <h2>Tooling</h2>
+  <ul>
+    <li hp-f>Tool A</li>
+    <li hp-f>Tool B</li>
+    <li hp-f>Tool c</li>
+  </ul>
+  <p hp-f>I guess now I have your attention!</p>
 </section>
 ```
 
-You can now use the Right/Left arrow keys (or N/B or L/H) to steer the audience's focus through your focusables. Less noise, more focus on your message.
+### What's going on?
 
-Pretty sweet, yes? No more clickapalooza in the sidebar hell that is PowerPoint/Google Slides/Keynote, just to accomplish rudimentary animations.
+hatepres will start by showing the first section. When focusing next (arrow right / `n` key), the first focusable will receive focus and be revealed. As focus traverses the elements in the section, the default hatepres stylesheet helps the audience focus on one thing at a time.
 
-3. (_Optional_) Apply more additional styling and layout.
+When there are no more focusables in a section, the arrow down key (or `n` key) will reveal the next section into view.
 
-Remember: YOU are the presentation - this is just your visual aid. Good luck!
+That's the core concept. Try out the demo [here](https://antonstihl.github.io/hatepres).
+
+### Reminder
+
+Keep in mind that YOU are the presentation. The slideshow is just your visual aid. Good luck!
+
+## Keyboard controls
+
+| Key              | Action                       | Comment                                           |
+| ---------------- | ---------------------------- | ------------------------------------------------- |
+| Arrow right/left | Next/previous focus          |                                                   |
+| `l` / `h`        | Next/previous focus          | VIM-style                                         |
+| Arrow down/up    | Next/previous slide          |                                                   |
+| `j` / `k`        | Next/previous slide          | VIM-style                                         |
+| `n` / `b`        | Next/previous focus or slide | Next focus if any left on slide, else next slide. |
+| `c`              | Toggle cursor on/off         |                                                   |
+
+NB: The omission of mouse-click controls is intentional. Navigating a browser is typically clicky by nature, so hatepres tries to not jump the gun on your presentation progress. If you do want click controls, however, feel free to extend the functionality with JavaScript. For example, the global `hatepres.next()` function should behave like a default mouse left-click in PowerPoint.
 
 ## Reference
 
-🚧 To be implemented. See demo for key usage examples: https://antonstihl.github.io/hatepres
+### Implementation philosophy
 
-hatepres uses the DOM as its state - no persistent JavaScript state exists. This makes extension, styling etc super available.
+hatepres uses the DOM as its state - no persistent JavaScript state exists. Current section, current focus etc are _only_ persisted as classes on the elements. This is the reason for the name "Hypermedia As The Engine of Presentation". The hypermedia encodes the state and available actions.
+
+A significant benefit is that extension, styling etc are very accessible to everyone.
+
+### JavaScript API
+
+🚧 To be documented. See and inspect demo for some live examples: https://antonstihl.github.io/hatepres

@@ -21,6 +21,16 @@
       padding: 0.2em;
     }
 
+    table {
+      font-size: 0.75rem;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 0.2em;
+      border: 1px solid var(--textColor);
+    }
+
     .sassy.focus-trace {
       transition: transform 1s;
       display: inline-block;
@@ -43,13 +53,49 @@
         filter: blur(0);
       }
     }
+
+    @keyframes spin {
+      from {
+        rotate: 0;
+      }
+
+      to {
+        rotate: 360deg;
+      }
+    }
   </style>
 </head>
 
 <body>
   <section>
-    <h1>hatepres</h1>
-    <p class="blur-in">The world's best documented presentation tool</p>
+    <div style="display: flex; flex-direction: column; justify-content: space-between; min-height: 100%;">
+      <div>
+        <h1>hatepres</h1>
+        <p class="blur-in">The world's best documented presentation tool</p>
+      </div>
+      <table>
+        <tr>
+          <td>Arrow down/up ⬇️ ⬆️</td>
+          <td>Next/previous slide</td>
+        </tr>
+        <tr>
+          <td>Arrow left/right ⬅️ ➡️</td>
+          <td>Next/previous focus</td>
+        </tr>
+        <tr>
+          <td>
+            <code>c</code>
+          </td>
+          <td>
+            Toggle cursor
+          </td>
+        </tr>
+        <tr>
+          <td><code>n</code> / <code>b</code></td>
+          <td>General next/back, like in PowerPoint etc.</td>
+        </tr>
+      </table>
+    </div>
   </section>
   <section>
     <h2>A presentation library</h2>
@@ -57,7 +103,7 @@
       presentation.
     </p>
     <h3 hp-f>Why?</h3>
-    <p hp-f>If you <em>can</em> code a presentation, <em>why wouldn't you</em>?</p>
+    <p hp-f>If you comfortably <em>can</em> code a presentation, <em>why wouldn't you</em>? :)</p>
   </section>
   <section>
     <h2>How to</h2>
@@ -70,15 +116,33 @@
       <li hp-f>Add the head script tag <code
           style="display: block;">&lt;script src="https://unpkg.com/hatepres@latest/script.js"&gt;&lt;/script&gt;</code>
       </li>
-      <li hp-f>Add attribute <code>hp-f</code> (f for focusable) to make elements focusable. This will hide
+      <li hp-f>Add attribute <code>hp-f</code> to make elements focusable. This will hide
         them and reveal on focus.
-        <ul hp-f=".banana">
-          <li>Bonus: Add a CSS selector as the <code>hp-f</code> value if you want to...</li>
-        </ul>
       </li>
       <li hp-f>Done! ✔️</li>
     </ol>
-    <div hp-fa class="banana" style="position: absolute; bottom: 0; font-size: 12px;">
+  </section>
+  <section>
+    <h2>Bonus</h2>
+    <p hp-f>Tap into the classes/attributes used by hatepres to <br><span hp-f class="p sassy">style your
+        elements</span> as your presentation progresses.</p>
+    <h3 hp-f>In your HTML</h3>
+    <ul hp-f>
+      <li>
+        <code>[hp-f]</code>
+        <ul hp-f=".hp-fa-demo">
+          <li>Bonus: Add a CSS selector as the <code>hp-f</code> value if you want to...</li>
+        </ul>
+      </li>
+      <li hp-f><code>.p</code> (perennial, used to escape [hp-f]'s default hiding)</li>
+    </ul>
+    <h3 hp-f>In your CSS/JS</h3>
+    <ul hp-f>
+      <li><code>section.current</code> - current section/slide</li>
+      <li><code>.current-focus</code> - element is in focus</li>
+      <li><code>.focus-trace</code> - element is or has been in focus</li>
+    </ul>
+    <div hp-fa class="hp-fa-demo" style="position: absolute; bottom: 0; font-size: 0.6rem;">
       <p>
         ... make it an anchor that also focuses other elements. These anchored elements need to
       </p>
@@ -90,25 +154,24 @@
     </div>
   </section>
   <section>
-    <h2>Bonus</h2>
-    <p hp-f>Tap into the classes/attributes used by hatepres to <br><span hp-f class="p sassy">style your
-        elements</span> as your presentation progresses.</p>
-    <h3 hp-f>In your HTML</h3>
+    <h2>Bonus II</h2>
+    <p>There's also the global <code>hatepres</code> (or <code>window.hatepres</code>) object, with an API to add
+      behaviour via JavaScript.</p>
     <ul hp-f>
-      <li>
-        <code>[hp-f]</code>
-      </li>
-      <li>
-        <code>[hp-fa]</code> (anchored focus, not focusable on its own)
-      </li>
-      <li><code>.p</code> (perennial, used to escape [hp-f]'s default hiding)</li>
+      <li><code>hatepres.focusNext()</code></li>
+      <li><code>hatepres.focusPrevious()</code></li>
+      <li><code>hatepres.goToNextSection()</code></li>
+      <li><code>hatepres.goToPreviousSection()</code></li>
+      <li><code>hatepres.next()</code></li>
     </ul>
-    <h3 hp-f>In your CSS/JS</h3>
-    <ul hp-f>
-      <li><code>section.current</code></li>
-      <li><code>.current-focus</code></li>
-      <li><code>.focus-trace</code></li>
-    </ul>
+    <p hp-f>Now you can do unheard of things, like a button that
+      triggers the next focus <button onclick="hatepres.focusNext()" style="font-style: italic;">CLICK
+        ME!</button>
+    </p>
+    <p hp-f>Or why not a suspicious emoji that - when hovered - moves you to the next slide? Some JavaScript can make
+      your presentations fun and interactive.</p>
+    <span hp-f onmouseenter="hatepres.goToNextSection()"
+      style="animation-name: spin; animation-duration: 2s; animation-iteration-count: infinite; display: inline-block;">👻</span>
   </section>
   <section>
     <h2>Philosophy</h2>

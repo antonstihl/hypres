@@ -5,23 +5,23 @@
 :root {
   font-family: system-ui, sans-serif;
   font-size: 32px;
-  cursor: none;
   --bgColour: black;
   --primaryColor: rgb(220, 220, 220);
   --secondaryColor: rgb(122, 122, 122);
   --textColor: var(--secondaryColor);
-  --cursor: url(laser_pointer.png) 16 16, default;
+  cursor: url(laser_pointer.png) 16 16, default;
+  color-scheme: dark;
 }
 
 body {
   background-color: var(--bgColour);
 
-  &.laser-pointer {
-    cursor: var(--cursor);
+  &.cursor-hidden {
+    cursor: none;
   }
 }
 
-* {
+:where(:not(button, input, textarea)) {
   color: var(--textColor);
 }
 
