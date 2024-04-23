@@ -41,28 +41,32 @@ With hatepres, the `section` element and the `hp-f` are all you need to build a 
 ### Example slideshow
 
 ```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  ...
   <script src="https://unpkg.com/hatepres/script.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/hatepres/styles.css" />
 </head>
-<section>
-  <h1>My presentation about stuff</h1>
-  <p hp-f>Why are we here?</p>
-  <p hp-f>How do I make you listen?</p>
-</section>
-<section>
-  <p>Let's get to it...</p>
-</section>
-<section>
-  <h2>Tooling</h2>
-  <ul>
-    <li hp-f>Tool A</li>
-    <li hp-f>Tool B</li>
-    <li hp-f>Tool c</li>
-  </ul>
-  <p hp-f>I guess now I have your attention!</p>
-</section>
+<body>
+  <section>
+    <h1>My presentation about stuff</h1>
+    <p hp-f>Why are we here?</p>
+    <p hp-f>How do I make you listen?</p>
+  </section>
+  <section>
+    <p>Let's get to it...</p>
+  </section>
+  <section>
+    <h2>Tooling</h2>
+    <ul>
+      <li hp-f>Tool A</li>
+      <li hp-f>Tool B</li>
+      <li hp-f>Tool c</li>
+    </ul>
+    <p hp-f>I guess now I have your attention!</p>
+  </section>
+</body>
+</html>
 ```
 
 ### What's going on?
