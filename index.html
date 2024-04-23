@@ -22,8 +22,29 @@
     }
 
     table {
-      font-size: 0.75rem;
-      border-collapse: collapse;
+      font-size: 0.6rem;
+      width: max-content;
+      border-spacing: 0;
+
+      tr:first-child {
+        td:first-child {
+          border-top-left-radius: 5px;
+        }
+
+        td:last-child {
+          border-top-right-radius: 5px;
+        }
+      }
+
+      tr:last-child {
+        td:first-child {
+          border-bottom-left-radius: 5px;
+        }
+
+        td:last-child {
+          border-bottom-right-radius: 5px;
+        }
+      }
     }
 
     td {
@@ -73,28 +94,30 @@
         <h1>hatepres</h1>
         <p class="blur-in">The world's best documented presentation tool</p>
       </div>
-      <table>
-        <tr>
-          <td>Arrow down/up ⬇️ ⬆️</td>
-          <td>Next/previous slide</td>
-        </tr>
-        <tr>
-          <td>Arrow left/right ⬅️ ➡️</td>
-          <td>Next/previous focus</td>
-        </tr>
-        <tr>
-          <td>
-            <code>c</code>
-          </td>
-          <td>
-            Toggle cursor
-          </td>
-        </tr>
-        <tr>
-          <td><code>n</code> / <code>b</code></td>
-          <td>General next/back, like in PowerPoint etc.</td>
-        </tr>
-      </table>
+      <div style="display: flex; justify-content: end;">
+        <table>
+          <tr>
+            <td>Arrow down/up ⬇️ ⬆️</td>
+            <td>Next/previous slide</td>
+          </tr>
+          <tr>
+            <td>Arrow left/right ⬅️ ➡️</td>
+            <td>Next/previous focus</td>
+          </tr>
+          <tr>
+            <td>
+              <code>c</code>
+            </td>
+            <td>
+              Toggle cursor
+            </td>
+          </tr>
+          <tr>
+            <td><code>n</code> / <code>b</code></td>
+            <td>General next/back, like in PowerPoint etc.</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </section>
   <section>
