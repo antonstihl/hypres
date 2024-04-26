@@ -5,6 +5,7 @@ window.hatepres = (function () {
     focusNext,
     focusPrevious,
     next: focusNextOrGoToNextSection,
+    back: focusPreviousOrGoToPreviousSection,
   };
 
   addEventListener("DOMContentLoaded", () => {
@@ -38,15 +39,30 @@ window.hatepres = (function () {
       focusNextOrGoToNextSection();
     } else if (e.key === "b") {
       e.preventDefault();
-      if (getPreviousFocusable()) {
-        focusPrevious();
-      } else {
-        goToPreviousSection();
-      }
+      focusPreviousOrGoToPreviousSection();
     } else if (e.key === "c") {
       document.body.classList.toggle("cursor-hidden");
     }
   });
+
+  (function touchListener() {
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    function checkDirection() {
+      if (touchendX < touchstartX) focusNextOrGoToNextSection();
+      if (touchendX > touchstartX) focusPreviousOrGoToPreviousSection();
+    }
+
+    document.addEventListener("touchstart", (e) => {
+      touchstartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      touchendX = e.changedTouches[0].screenX;
+      checkDirection();
+    });
+  })();
 
   function goToNextSection() {
     const next = nextSection();
@@ -108,6 +124,14 @@ window.hatepres = (function () {
       focusNext();
     } else {
       goToNextSection();
+    }
+  }
+
+  function focusPreviousOrGoToPreviousSection() {
+    if (getPreviousFocusable()) {
+      focusPrevious();
+    } else {
+      goToPreviousSection();
     }
   }
 
