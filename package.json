@@ -1,6 +1,6 @@
 {
   "name": "hatepres",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "hypermedia as the engine of presentation",
   "main": "script.js",
   "files": [
