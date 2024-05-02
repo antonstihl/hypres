@@ -1,12 +1,12 @@
-# hatepres
+# hypres
 
-_hypermedia as the engine of presentation_
+_hypermedia presentation_
 
 Use HTML to build an amazing slideshow. The whole software industry is moving toward everything-as-code - so should presentation tooling!
 
 In addition to the opinionated core functionality (script) and stylesheet, the full power of HTML, JS and CSS is at the author's fingertips.
 
-Here is a demo presentation with a hatepres presentation in action: https://antonstihl.github.io/hatepres
+Here is a demo presentation with a hypres presentation in action: https://antonstihl.github.io/hypres
 
 ## Getting started
 
@@ -17,16 +17,16 @@ Add the below script and stylesheet to the HTML `<head>`.
 ```html
 <head>
   ...
-  <script src="https://unpkg.com/hatepres@latest/script.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/hatepres@latest/styles.css" />
+  <script src="https://unpkg.com/hypres@latest/script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/hypres@latest/styles.css" />
 </head>
 ```
 
-If you fancy managing packages there is also `npm install hatepres`, with which you instead reference the node_modules files.
+If you fancy managing packages there is also `npm install hypres`, with which you instead reference the node_modules files.
 
 ### Core utilities
 
-The basic building blocks - the bread and butter - of hatepres are:
+The basic building blocks - the bread and butter - of hypres are:
 
 1. `<section>` element
 
@@ -60,8 +60,8 @@ Declaring your presentation in HTML code is fast, powerful and flexible. Especia
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://unpkg.com/hatepres/script.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/hatepres/styles.css" />
+    <script src="https://unpkg.com/hypres/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/hypres/styles.css" />
   </head>
   <body>
     <section>
@@ -87,13 +87,13 @@ Declaring your presentation in HTML code is fast, powerful and flexible. Especia
 
 ### How does it work?
 
-hatepres will start by showing the first section. When focusing next (arrow right / `n` key), the first focusable will receive focus and be revealed. As focus traverses the elements in the section, the default hatepres stylesheet helps the audience focus on one thing at a time.
+hypres will start by showing the first section. When focusing next (arrow right / `n` key), the first focusable will receive focus and be revealed. As focus traverses the elements in the section, the default hypres stylesheet helps the audience focus on one thing at a time.
 
 When there are no more focusables in a section, the arrow down key (or `n` key) will reveal the next section into view.
 
 If you want to go back a section, just press arrow up key. Your entire state will stay in the DOM, so no more "let me just revert 20 clicks from slide 4 to show you a thing on slide 2 and then do 20 clicks forward again to get back to where I was".
 
-Try out the demo [here](https://antonstihl.github.io/hatepres).
+Try out the demo [here](https://antonstihl.github.io/hypres).
 
 ### Reminder
 
@@ -110,16 +110,16 @@ Keep in mind that YOU are the presentation. The slideshow is just your visual ai
 | `n` / `b`        | Next/previous focus or slide | Next focus if any left on slide, else next slide. |
 | `c`              | Toggle cursor on/off         |                                                   |
 
-NB: The omission of mouse-click controls is intentional. Navigating a browser and putting the window in focus is typically clicky by nature, so hatepres will not jump the gun on your presentation progress. If you do want click controls, however, feel free to extend the functionality with JavaScript. For example, the global `hatepres.next()` function should behave like a default mouse left-click in PowerPoint.
+NB: The omission of mouse-click controls is intentional. Navigating a browser and putting the window in focus is typically clicky by nature, so hypres will not jump the gun on your presentation progress. If you do want click controls, however, feel free to extend the functionality with JavaScript. For example, the global `hypres.next()` function should behave like a default mouse left-click in PowerPoint.
 
 ## Reference
 
 ### Implementation philosophy
 
-hatepres uses the DOM as its state - no persistent JavaScript state exists. Current section, current focus etc are _only_ persisted as classes on the elements. This is the reason for the name "Hypermedia As The Engine of Presentation". The hypermedia encodes the state and available actions.
+hypres uses the DOM as its state - no persistent JavaScript state exists. Current section, current focus etc are _only_ persisted as classes on the elements. The hypermedia encodes the state and available actions.
 
-A significant benefit is that extension, styling etc are very accessible to everyone.
+This approach yields the significant benefit that extension, styling etc are very accessible to everyone.
 
 ### JavaScript API
 
-🚧 To be documented. See and inspect demo for some live examples: https://antonstihl.github.io/hatepres
+🚧 To be documented. See and inspect demo for some live examples: https://antonstihl.github.io/hypres

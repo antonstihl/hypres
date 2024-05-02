@@ -1,5 +1,5 @@
-window.hatepres = (function () {
-  const hatepres = {
+window.hypres = (function () {
+  const hypres = {
     goToNextSection,
     goToPreviousSection,
     focusNext,
@@ -188,5 +188,5 @@ window.hatepres = (function () {
       : previousFocusTrace[previousFocusTrace.length - 1];
   }
 
-  return hatepres;
+  return hypres;
 })();

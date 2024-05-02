@@ -7,8 +7,8 @@
   <title>Presentation</title>
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📽️</text></svg>">
-  <script src="https://unpkg.com/hatepres@latest/script.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/hatepres@latest/styles.css" />
+  <script src="https://unpkg.com/hypres@latest/script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/hypres@latest/styles.css" />
   <style>
     code {
       font-family: monospace;
@@ -91,7 +91,7 @@
   <section>
     <div style="display: flex; flex-direction: column; justify-content: space-between; min-height: 100%;">
       <div>
-        <h1>hatepres</h1>
+        <h1>hypres</h1>
         <p class="blur-in">The world's best documented presentation tool</p>
       </div>
       <div style="display: flex; justify-content: end;">
@@ -122,7 +122,7 @@
   </section>
   <section>
     <h2>A presentation library</h2>
-    <p hp-f>hatepres provides simple tooling to render semantic-enough HTML as a delightful visual aid for your
+    <p hp-f>hypres provides simple tooling to render semantic-enough HTML as a delightful visual aid for your
       presentation.
     </p>
     <h3 hp-f>Why?</h3>
@@ -134,10 +134,10 @@
       <li hp-f>Create an .html file with your HTML content, divided into one <code>&lt;section/&gt;</code> per "slide".
       </li>
       <li hp-f>Add the head style tag <code
-          style="display: block;">&lt;link rel="stylesheet" href="https://unpkg.com/hatepres@latest/styles.css" /&gt;</code>
+          style="display: block;">&lt;link rel="stylesheet" href="https://unpkg.com/hypres@latest/styles.css" /&gt;</code>
       </li>
       <li hp-f>Add the head script tag <code
-          style="display: block;">&lt;script src="https://unpkg.com/hatepres@latest/script.js"&gt;&lt;/script&gt;</code>
+          style="display: block;">&lt;script src="https://unpkg.com/hypres@latest/script.js"&gt;&lt;/script&gt;</code>
       </li>
       <li hp-f>Add attribute <code>hp-f</code> to make elements focusable. This will hide
         them and reveal on focus.
@@ -147,7 +147,7 @@
   </section>
   <section>
     <h2>Bonus</h2>
-    <p hp-f>Tap into the classes/attributes used by hatepres to <br><span hp-f class="p sassy">style your
+    <p hp-f>Tap into the classes/attributes used by hypres to <br><span hp-f class="p sassy">style your
         elements</span> as your presentation progresses.</p>
     <h3 hp-f>In your HTML</h3>
     <ul hp-f>
@@ -178,27 +178,27 @@
   </section>
   <section>
     <h2>Bonus II</h2>
-    <p>There's also the global <code>hatepres</code> (or <code>window.hatepres</code>) object, with an API to add
+    <p>There's also the global <code>hypres</code> (or <code>window.hypres</code>) object, with an API to add
       behaviour via JavaScript.</p>
     <ul hp-f>
-      <li><code>hatepres.focusNext()</code></li>
-      <li><code>hatepres.focusPrevious()</code></li>
-      <li><code>hatepres.goToNextSection()</code></li>
-      <li><code>hatepres.goToPreviousSection()</code></li>
-      <li><code>hatepres.next()</code></li>
+      <li><code>hypres.focusNext()</code></li>
+      <li><code>hypres.focusPrevious()</code></li>
+      <li><code>hypres.goToNextSection()</code></li>
+      <li><code>hypres.goToPreviousSection()</code></li>
+      <li><code>hypres.next()</code></li>
     </ul>
     <p hp-f>Now you can do unheard of things, like a button that
-      triggers the next focus <button onclick="hatepres.focusNext()" style="font-style: italic;">CLICK
+      triggers the next focus <button onclick="hypres.focusNext()" style="font-style: italic;">CLICK
         ME!</button>
     </p>
     <p hp-f>Or why not a suspicious emoji that - when hovered - moves you to the next slide? Some JavaScript can make
       your presentations fun and interactive.</p>
-    <span hp-f onmouseenter="hatepres.goToNextSection()"
+    <span hp-f onmouseenter="hypres.goToNextSection()"
       style="animation-name: spin; animation-duration: 2s; animation-iteration-count: infinite; display: inline-block;">👻</span>
   </section>
   <section>
     <h2>Philosophy</h2>
-    <p hp-f>Some of the key characteristics of hatepres come from David JP Phillips TEDx talk, <a
+    <p hp-f>Some of the key characteristics of hypres come from David JP Phillips TEDx talk, <a
         href="https://youtu.be/Iwpi1Lm6dFo?si=ZWBpE1KRV_Ys9pdU">How to avoid death by PowerPoint.</a></p>
     <ol>
       <ul>
